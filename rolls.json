@@ -1,50 +1,28 @@
 [
   {
+    "id": "r003",
+    "label": "paytons birthday in kentucky",
+    "date": "february 2026",
+    "stock": "kodak ultramax 400",
+    "cover": "r003/031.jpg",
+    "frames": 36
+  },
+  {
+    "id": "r002",
+    "label": "random winter shots",
+    "date": "january-february 2026",
+    "stock": "kodak ultramax 400",
+    "cover": "r002/023.jpg",
+    "frames": 36
+  },
+  {
     "id": "r001",
     "label": "first roll",
     "date": "december 2025",
     "stock": "kodak ultramax 400",
-    "cover": "r001/01.jpg",
-    "frames": 36
+    "cover": "r001/004.jpg",
+    "frames": 33
   },
-{
-"id": "r002",
-"label": "alex’s birthday",
-"date": "sep 2024",
-"stock": "fuji 400h",
-"cover": "r002/01.jpg",
-"frames": 9
-},
-{
-"id": "r003",
-"label": "random fall stuff",
-"date": "nov 2024",
-"stock": "kodak ultramax",
-"cover": "r003/01.jpg",
-"frames": 12
-},
-{
-"id": "r004",
-"label": "pittsburgh trip",
-"date": "aug 2024",
-"stock": "ilford hp5",
-"cover": "r004/01.jpg",
-"frames": 11
-},
-{
-"id": "r005",
-"label": "summer, misc",
-"date": "jul 2024",
-"stock": "kodak gold 200",
-"cover": "r005/01.jpg",
-"frames": 12
-},
-{
-"id": "r006",
-"label": "ohio river walk",
-"date": "mar 2024",
-"stock": "fuji 400h",
-"cover": "r006/01.jpg",
-"frames": 8
-}
+  
+
 ]
