@@ -264,7 +264,7 @@ function openRoll(roll) {
   const sheet = document.getElementById('contact-sheet');
   sheet.innerHTML = '';
   for (let i = 0; i < roll.frames; i++) {
-    const num = String(i + 1).padStart(2, '0');
+    const num = String(i + 1).padStart(3, '0');
     const src = `${R2_BASE}/${roll.id}/${num}.jpg`;
     const cell = document.createElement('div');
     cell.className = 'frame-cell';
