@@ -23,6 +23,10 @@
     background-size: 180px; opacity: 0.04; mix-blend-mode: overlay;
   }
 
+.page-wrap { max-width: 860px; margin: 0 auto; }
+.strip-bleed { margin: 0 calc(-50vw + min(430px, 50vw)); }
+@media (max-width: 640px) { .strip-bleed { margin: 0; } }
+
 header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); }
 .logo { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--cream); opacity: 0.7; }
 .header-meta { font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); }
