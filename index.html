@@ -25,10 +25,9 @@
 
 .page-wrap { max-width: 860px; margin: 0 auto; }
 .strip-bleed { margin: 0 calc(-50vw + min(430px, 50vw)); }
-@media (max-width: 860px) { .strip-bleed { margin: 0 -2.4rem; } }
-@media (max-width: 640px) { .strip-bleed { margin: 0 -1.2rem; } }
+@media (max-width: 640px) { .strip-bleed { margin: 0; } }
 
-header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); max-width: 860px; margin: 0 auto; }
+header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); }
 .logo { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--cream); opacity: 0.7; }
 .header-meta { font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); }
 
@@ -39,14 +38,15 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .hero-stats-num { font-size: 1.8rem; color: var(--tape); line-height: 1; letter-spacing: -0.02em; }
 .hero-stats-label { font-size: 0.52rem; letter-spacing: 0.2em; color: var(--muted); margin-top: 0.2rem; }
 
-.strip-wrap { position: relative; overflow: hidden; }
+.strip-wrap { position: relative; margin: 0 -2.4rem; overflow: hidden; }
 .strip-wrap::before, .strip-wrap::after { content: ‘’; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
 .strip-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
 .strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
 .strip-holes { height: 14px; background: repeating-linear-gradient(to right, transparent 0px, transparent 18px, var(--bg3) 18px, var(--bg3) 30px, transparent 30px, transparent 48px); border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); }
-.strip-frames { display: flex; gap: 6px; padding: 6px 2.4rem; background: var(--bg3); animation: scrollStrip 90s linear infinite; width: max-content; }
+.strip-frames { display: flex; gap: 6px; padding: 6px 2.4rem; background: var(--bg3); animation: scrollStrip 32s linear infinite; width: max-content; }
 .strip-frames:hover { animation-play-state: paused; }
-.strip-frame { width: 200px; height: 140px; flex-shrink: 0; overflow: hidden; }
+.strip-frame { width: 200px; height: 140px; flex-shrink: 0; overflow: hidden; position: relative; }
+.strip-frame::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(200,169,110,0.15), inset 0 0 12px rgba(0,0,0,0.4); pointer-events: none; }
 .strip-frame img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) brightness(0.85); transition: filter 0.3s, transform 0.4s; display: block; }
 .strip-frame:hover img { filter: sepia(0.05) brightness(1.0); transform: scale(1.04); }
 
@@ -56,7 +56,7 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 #roll-view  { display: none; }
 
 .rolls-header { padding: 2.8rem 2.4rem 1.4rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--faint); }
-.rolls-title { font-size: 0.6rem; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; }
+.rolls-title { font-size: 0.6rem; letter-spacing: 0.25em; color: var(--muted); }
 .rolls-count { font-size: 0.58rem; color: var(--muted); opacity: 0.5; }
 
 .roll-row { display: grid; grid-template-columns: 80px 1fr auto; align-items: center; gap: 1.8rem; padding: 1.2rem 2.4rem; border-bottom: 1px solid var(--faint); cursor: pointer; transition: background 0.2s; opacity: 0; animation: rowIn 0.4s ease forwards; }
@@ -68,7 +68,7 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .roll-thumb img, .roll-thumb-ph { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) brightness(0.9); transition: filter 0.3s; display: block; }
 .roll-thumb-ph { background: var(--bg3); }
 .roll-info { min-width: 0; }
-.roll-label { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--cream); margin-bottom: 0.35rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.roll-label { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--cream); margin-bottom: 0.35rem; }
 .roll-sub { font-size: 0.58rem; color: var(--muted); letter-spacing: 0.08em; display: flex; gap: 1.2rem; }
 .roll-right { display: flex; align-items: center; gap: 1.2rem; flex-shrink: 0; }
 .roll-frames { font-size: 0.58rem; color: var(--muted); opacity: 0.6; }
@@ -139,12 +139,10 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
   <span class="header-meta">olympus xa2 · 35mm</span>
 </header>
 
-<div class="page-wrap">
-
 <div id="home-view">
   <section class="hero">
     <div class="hero-top">
-      <div class="hero-name">keegan whitacre</div>
+      <div class="hero-name">Keegan Whitacre</div>
       <div class="hero-stats">
         <div class="hero-stats-num" id="total-frames">—</div>
         <div class="hero-stats-label">frames across <span id="total-rolls">—</span> rolls</div>
@@ -152,15 +150,12 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
     </div>
   </section>
 
-  <div class="strip-bleed">
   <div class="strip-wrap">
     <div class="strip-holes"></div>
     <div class="strip-frames" id="strip"></div>
     <div class="strip-holes"></div>
   </div>
-  </div>
 
-  <div class="scroll-hint">↓ browse by roll</div>
 
   <div class="rolls-header">
     <span class="rolls-title">all rolls</span>
@@ -184,8 +179,6 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
   </div>
   <div class="contact-sheet" id="contact-sheet"></div>
 </div>
-
-</div><!-- end page-wrap -->
 
 <div class="lightbox" id="lightbox">
   <button class="lb-close" onclick="closeLB()">close ✕</button>
