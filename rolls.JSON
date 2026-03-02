@@ -1,12 +1,12 @@
 [
-{
-“id”: “r001”,
-“label”: “hocking hills, oct”,
-“date”: “oct 2024”,
-“stock”: “kodak gold 200”,
-“cover”: “r001/01.jpg”,
-“frames”: 10
-},
+  {
+    “id”: “r001”,
+    “label”: “first roll”,
+    “date”: “december 2025”,
+    “stock”: “kodak ultramax 400”,
+    “cover”: “r001/01.jpg”,
+    “frames”: 36
+  },
 {
 “id”: “r002”,
 “label”: “alex’s birthday”,
