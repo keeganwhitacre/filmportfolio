@@ -25,9 +25,10 @@
 
 .page-wrap { max-width: 860px; margin: 0 auto; }
 .strip-bleed { margin: 0 calc(-50vw + min(430px, 50vw)); }
-@media (max-width: 640px) { .strip-bleed { margin: 0; } }
+@media (max-width: 860px) { .strip-bleed { margin: 0 -2.4rem; } }
+@media (max-width: 640px) { .strip-bleed { margin: 0 -1.2rem; } }
 
-header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); }
+header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); max-width: 860px; margin: 0 auto; }
 .logo { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--cream); opacity: 0.7; }
 .header-meta { font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); }
 
@@ -38,12 +39,12 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .hero-stats-num { font-size: 1.8rem; color: var(--tape); line-height: 1; letter-spacing: -0.02em; }
 .hero-stats-label { font-size: 0.52rem; letter-spacing: 0.2em; color: var(--muted); margin-top: 0.2rem; }
 
-.strip-wrap { position: relative; margin: 0 -2.4rem; overflow: hidden; }
+.strip-wrap { position: relative; overflow: hidden; }
 .strip-wrap::before, .strip-wrap::after { content: ‘’; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
 .strip-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
 .strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
 .strip-holes { height: 14px; background: repeating-linear-gradient(to right, transparent 0px, transparent 18px, var(--bg3) 18px, var(--bg3) 30px, transparent 30px, transparent 48px); border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); }
-.strip-frames { display: flex; gap: 6px; padding: 6px 2.4rem; background: var(--bg3); animation: scrollStrip 32s linear infinite; width: max-content; }
+.strip-frames { display: flex; gap: 6px; padding: 6px 2.4rem; background: var(--bg3); animation: scrollStrip 90s linear infinite; width: max-content; }
 .strip-frames:hover { animation-play-state: paused; }
 .strip-frame { width: 200px; height: 140px; flex-shrink: 0; overflow: hidden; }
 .strip-frame img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) brightness(0.85); transition: filter 0.3s, transform 0.4s; display: block; }
@@ -138,10 +139,12 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
   <span class="header-meta">olympus xa2 · 35mm</span>
 </header>
 
+<div class="page-wrap">
+
 <div id="home-view">
   <section class="hero">
     <div class="hero-top">
-      <div class="hero-name">keegan whitacre</div>
+      <div class="hero-name">Keegan Whitacre</div>
       <div class="hero-stats">
         <div class="hero-stats-num" id="total-frames">—</div>
         <div class="hero-stats-label">frames across <span id="total-rolls">—</span> rolls</div>
@@ -149,10 +152,12 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
     </div>
   </section>
 
+  <div class="strip-bleed">
   <div class="strip-wrap">
     <div class="strip-holes"></div>
     <div class="strip-frames" id="strip"></div>
     <div class="strip-holes"></div>
+  </div>
   </div>
 
   <div class="scroll-hint">↓ browse by roll</div>
@@ -179,6 +184,8 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
   </div>
   <div class="contact-sheet" id="contact-sheet"></div>
 </div>
+
+</div><!-- end page-wrap -->
 
 <div class="lightbox" id="lightbox">
   <button class="lb-close" onclick="closeLB()">close ✕</button>
