@@ -294,7 +294,7 @@ function openLB(index) {
 }
 
 function renderLB() {
-  const num = String(lbIndex + 1).padStart(2, '0');
+  const num = String(lbIndex + 1).padStart(3, '0');
   const src = `${R2_BASE}/${currentRoll.id}/${num}.jpg`;
   document.getElementById('lb-img-wrap').innerHTML =
     `<img src="${src}" alt="frame ${num}"
