@@ -15,7 +15,7 @@
     --rust: #b85c38; --tape: #c8a96e;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body { background: var(--bg); color: var(--cream); font-family: 'Space Mono', monospace; min-height: 100vh; overflow-x: hidden; cursor: default; }
   body::after {
     content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
@@ -209,11 +209,31 @@ async function init() {
 
 function buildStrip() {
   const strip = document.getElementById('strip');
-  // Use cover frame from each roll, duplicated for seamless loop
-  [...rolls, ...rolls].forEach(r => {
+
+  // Pick up to 6 random frame numbers from each roll
+  const frames = [];
+  rolls.forEach(r => {
+    const count = Math.min(r.frames, 6);
+    const picks = new Set();
+    while (picks.size < count) {
+      picks.add(Math.floor(Math.random() * r.frames) + 1);
+    }
+    picks.forEach(n => {
+      frames.push({
+        src: `${R2_BASE}/${r.id}/${String(n).padStart(3, '0')}.jpg`,
+        label: r.label
+      });
+    });
+  });
+
+  // Shuffle
+  frames.sort(() => Math.random() - 0.5);
+
+  // Duplicate for seamless loop
+  [...frames, ...frames].forEach(f => {
     const div = document.createElement('div');
     div.className = 'strip-frame';
-    div.innerHTML = `<img src="${R2_BASE}/${r.cover}" alt="${r.label}" loading="lazy">`;
+    div.innerHTML = `<img src="${f.src}" alt="${f.label}" loading="lazy">`;
     strip.appendChild(div);
   });
 }
