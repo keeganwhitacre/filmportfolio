@@ -12,15 +12,15 @@
     "label": "random winter shots",
     "date": "january-february 2026",
     "stock": "kodak ultramax 400",
-    "cover": "r002/023.jpg",
-    "frames": 36
+    "cover": "r002/022.jpg",
+    "frames": 35
   },
   {
     "id": "r001",
     "label": "first roll",
     "date": "december 2025",
     "stock": "kodak ultramax 400",
-    "cover": "r001/004.jpg",
+    "cover": "r001/005.jpg",
     "frames": 33
   }
 ]
