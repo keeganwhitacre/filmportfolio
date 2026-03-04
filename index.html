@@ -25,7 +25,7 @@
   }
 
 .page-wrap { max-width: 860px; margin: 0 auto; }
-.strip-bleed { margin: 0 calc(-50vw + min(430px, 50vw)); }
+.strip-bleed { margin: 0 calc(-50vw + 50%); }
 @media (max-width: 640px) { .strip-bleed { margin: 0; } }
 
 header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--faint); }
@@ -34,13 +34,13 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 
 .hero { padding: 3rem 2.4rem 0; opacity: 0; animation: fadeIn 0.7s ease forwards 0.15s; }
 .hero-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; }
-.hero-name { font-family: ‘Cormorant Garamond’, serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 300; font-style: italic; line-height: 1; color: var(--cream); }
+.hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 300; font-style: italic; line-height: 1; color: var(--cream); }
 .hero-stats { text-align: right; padding-bottom: 0.2rem; }
 .hero-stats-num { font-size: 1.8rem; color: var(--tape); line-height: 1; letter-spacing: -0.02em; }
 .hero-stats-label { font-size: 0.52rem; letter-spacing: 0.2em; color: var(--muted); margin-top: 0.2rem; }
 
 .strip-wrap { position: relative; margin: 0 -2.4rem; overflow: hidden; }
-.strip-wrap::before, .strip-wrap::after { content: ‘’; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
+.strip-wrap::before, .strip-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
 .strip-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
 .strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
 .strip-holes { height: 14px; background: repeating-linear-gradient(to right, transparent 0px, transparent 18px, var(--bg3) 18px, var(--bg3) 30px, transparent 30px, transparent 48px); border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); }
@@ -65,7 +65,7 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .roll-row:hover .roll-thumb img { filter: sepia(0.1) brightness(1.05); }
 .roll-row:hover .roll-arrow { transform: translateX(4px); opacity: 1; }
 .roll-thumb { width: 80px; height: 56px; overflow: hidden; flex-shrink: 0; position: relative; }
-.roll-thumb::after { content: ‘’; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(200,169,110,0.12); }
+.roll-thumb::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(200,169,110,0.12); }
 .roll-thumb img, .roll-thumb-ph { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) brightness(0.9); transition: filter 0.3s; display: block; }
 .roll-thumb-ph { background: var(--bg3); }
 .roll-info { min-width: 0; }
@@ -76,7 +76,7 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .roll-arrow { font-size: 0.65rem; color: var(--tape); opacity: 0.5; transition: transform 0.2s, opacity 0.2s; }
 
 .roll-nav { padding: 1.4rem 2.4rem; display: flex; align-items: center; gap: 1.2rem; border-bottom: 1px solid var(--faint); }
-.back-btn { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--tape); cursor: pointer; background: none; border: none; font-family: ‘Space Mono’, monospace; padding: 0; opacity: 0.8; transition: opacity 0.2s; }
+.back-btn { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--tape); cursor: pointer; background: none; border: none; font-family: 'Space Mono', monospace; padding: 0; opacity: 0.8; transition: opacity 0.2s; }
 .back-btn:hover { opacity: 1; }
 .nav-sep { color: var(--faint); font-size: 0.7rem; }
 .roll-nav-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--muted); }
@@ -107,12 +107,12 @@ header { padding: 1.6rem 2.4rem 1.2rem; display: flex; justify-content: space-be
 .lb-ph { width: min(85vw, 900px); height: 60vh; display: flex; align-items: center; justify-content: center; background: var(--bg3); }
 .lb-ph-label { font-size: 0.6rem; color: rgba(200,169,110,0.2); letter-spacing: 0.2em; }
 .lb-footer { margin-top: 1.2rem; width: 100%; display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px; }
-.lb-caption { font-family: ‘Cormorant Garamond’, serif; font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--cream); opacity: 0.85; }
+.lb-caption { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--cream); opacity: 0.85; }
 .lb-frame-id { font-size: 0.55rem; letter-spacing: 0.15em; color: var(--muted); opacity: 0.5; }
-.lb-nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--tape); opacity: 0.5; cursor: pointer; background: none; border: none; font-family: ‘Space Mono’, monospace; transition: opacity 0.2s; padding: 1rem; }
+.lb-nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--tape); opacity: 0.5; cursor: pointer; background: none; border: none; font-family: 'Space Mono', monospace; transition: opacity 0.2s; padding: 1rem; }
 .lb-nav:hover { opacity: 1; }
 .lb-prev { left: 1rem; } .lb-next { right: 1rem; }
-.lb-close { position: fixed; top: 1.5rem; right: 2rem; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--muted); cursor: pointer; background: none; border: none; font-family: ‘Space Mono’, monospace; transition: color 0.2s; text-transform: uppercase; }
+.lb-close { position: fixed; top: 1.5rem; right: 2rem; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--muted); cursor: pointer; background: none; border: none; font-family: 'Space Mono', monospace; transition: color 0.2s; text-transform: uppercase; }
 .lb-close:hover { color: var(--cream); }
 
 @keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
@@ -182,6 +182,7 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
 </head>
 <body>
 
+<div class="page-wrap">
 <header>
   <span class="logo">kw / film</span>
   <span class="header-meta">olympus xa2 · 35mm</span>
@@ -198,7 +199,7 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
     </div>
   </section>
 
-  <div class="strip-wrap">
+  <div class="strip-wrap strip-bleed">
     <div class="strip-holes"></div>
     <div class="strip-frames" id="strip"></div>
     <div class="strip-holes"></div>
@@ -226,6 +227,8 @@ header, .rolls-header, .roll-row, .roll-nav, .roll-view-header, .contact-sheet {
     <div class="roll-view-count" id="rv-count"></div>
   </div>
   <div class="contact-sheet" id="contact-sheet"></div>
+</div>
+
 </div>
 
 <div class="lightbox" id="lightbox">
