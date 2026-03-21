@@ -1,5 +1,29 @@
 [
   {
+    "id": "r006",
+    "label": "san diego day 4-5",
+    "date": "march 19-20 2026",
+    "stock": "kodak gold 200",
+    "cover": "r006/029.jpg",
+    "frames": 38
+  },
+  {
+    "id": "r005",
+    "label": "san diego day 2-3",
+    "date": "march 17-18 2026",
+    "stock": "kodak gold 200",
+    "cover": "r005/031.jpg",
+    "frames": 35
+  },
+  {
+    "id": "r004",
+    "label": "san diego day 1",
+    "date": "march 16 2026",
+    "stock": "kodak ultramax 400",
+    "cover": "r004/030.jpg",
+    "frames": 36
+  },
+  {
     "id": "r003",
     "label": "paytons birthday in kentucky",
     "date": "february 2026",
